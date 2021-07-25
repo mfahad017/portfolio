@@ -1,0 +1,38 @@
+.navigationBar {
+  //   z-index: 100;
+  //   position: fixed;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  position: fixed;
+  width: 100%;
+  background: $color-navbar;
+  //border-bottom: 1px solid black;
+  height: $height-navbar;
+
+  &-container {
+    width: 100rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+
+    padding: 2rem 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &-selector {
+    transition: all 300ms;
+    position: absolute;
+    width: 7rem;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) skewX(-10deg);
+    width: 10rem;
+    height: $height-navbar;
+    background-color: tomato;
+    z-index: -1;
+    opacity: 1;
+    // margin-left: calc(10rem * 1);
+  }
+}

@@ -1,0 +1,57 @@
+.dynamicHeading {
+  display: flex;
+  overflow: hidden;
+  //REVIEW width: 55%;
+  padding-right: 3.1rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  font-size: 6rem;
+  @include respond(phone) {
+    font-size: 4rem;
+  }
+  &-static {
+    white-space: nowrap;
+    @include respond(phone) {
+      margin-top: 1rem;
+    }
+    & p {
+      & span {
+        animation: gaib 6s linear 0s infinite normal;
+      }
+    }
+    font-size: inherit;
+    font-weight: 400;
+    height: 9rem;
+
+    @include respond(phone) {
+    }
+  }
+  &-dynamic {
+    font-size: inherit;
+    color: tomato;
+    margin-left: 2rem;
+    height: 9rem;
+    line-height: 9rem;
+
+    & li {
+      width: 100%;
+      list-style: none;
+      font-size: inherit;
+      font-weight: 500;
+      position: relative;
+      //REVIEW doesnt work without tihs top
+      top: -0.35rem;
+      animation: slide 6s steps(2) infinite;
+
+      & span {
+        display: block;
+        position: relative;
+        line-height: 9rem;
+        white-space: nowrap;
+        width: 0px;
+        overflow: hidden;
+        animation: new 3s ease-in-out infinite;
+      }
+    }
+  }
+}

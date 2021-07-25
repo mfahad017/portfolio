@@ -1,0 +1,179 @@
+@keyframes typing {
+  40%,
+  60% {
+    left: calc(100% + 30px);
+    width: 0;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide {
+  100% {
+    top: -18.5rem;
+  }
+}
+
+@keyframes gaib {
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  47% {
+    opacity: 1;
+  }
+  3% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+
+@keyframes new {
+  100% {
+    width: 0%;
+  }
+
+  40%,
+  60% {
+    width: 100%;
+  }
+}
+
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+
+@keyframes popin {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fromLeftSimple {
+  100% {
+    width: calc(100%);
+  }
+  0% {
+    width: 0;
+  }
+}
+
+@keyframes textFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes featureAnimate {
+  0% {
+    transform: rotateY(90deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(-30deg);
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes scaleChange {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: transparent;
+  }
+  30% {
+    color: white;
+  }
+  50% {
+    background-color: #5b43d6;
+  }
+  60% {
+    color: white;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes projectButton {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2) translate(-50%, -50%);
+  }
+}
+
+@keyframes goUp {
+  0% {
+    transform: translate(50%, calc(-25% + 0rem)) rotate(90deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(50%, calc(-25% - 0.3rem)) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(50%, calc(-25% + 0rem)) rotate(90deg) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes goDown {
+  0% {
+    transform: translate(50%, 0rem) rotate(90deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(50%, 0.3rem) rotate(90deg) scale(1.05);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(50%, 0rem) rotate(90deg) scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,49 @@
+.barChart {
+  width: auto;
+  //background: #eeeeee;
+  display: block;
+  font-size: 1.75rem;
+  width: 100%;
+  position: relative;
+  margin: 0.5rem 0rem;
+  //line-height: 3rem;
+  &__bar {
+    display: inline-flex;
+    width: 100%;
+    height: 3rem;
+    background: #eeeeee;
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+    &-text {
+      display: inline-block;
+      background: #05c2c9;
+      color: white;
+      line-height: 3rem;
+      flex: 0 0 20%;
+      text-align: center;
+    }
+    &-width {
+      display: inline-block;
+      //width: 50%;
+      //background: #05c2c9;
+      position: relative;
+      &-div {
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #01a1a7;
+        //animation: fromLeftSimple 1s linear;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+  &__percent {
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    color: rgb(155, 155, 155);
+    //background: teal;
+  }
+}

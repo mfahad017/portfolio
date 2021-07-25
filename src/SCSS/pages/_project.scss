@@ -1,0 +1,319 @@
+.project {
+  scroll-snap-align: start;
+  display: flex;
+  height: 100vh;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  margin: auto;
+  &__item {
+    margin: auto;
+    //margin-top: 3.5%;
+    width: 80%;
+    @include respond(phone) {
+      width: 100%;
+    }
+    height: 100 vh;
+    overflow: hidden;
+    &__laptop {
+      position: relative;
+
+      &-image {
+        width: 100%;
+      }
+      &-screen {
+        position: absolute;
+        top: 5%;
+        left: 12%;
+        width: 76.2%;
+        height: 83%;
+        border-radius: 3rem 3rem 1rem 1rem;
+        overflow: hidden;
+        background-color: black;
+        &-content {
+          width: 100%;
+          transition: all 100ms;
+          backface-visibility: hidden;
+        }
+        &__overlay {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
+          opacity: 1;
+          transition: all 100ms;
+          backface-visibility: hidden;
+          display: flex;
+          flex-flow: column nowrap;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          &-small {
+            position: absolute;
+            height: 0;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            transition: all 300ms;
+
+            & > button {
+              border: none;
+              color: white;
+              padding: 1.5rem 4rem;
+              border-radius: 10rem;
+              transition: all 300ms;
+              backface-visibility: hidden;
+              position: relative;
+              z-index: 2;
+
+              &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                @include absCenter;
+                border-radius: 10rem;
+                transform: translate(-50%, -50%) scale(1);
+                background-image: inherit;
+                z-index: -2;
+                transition: all 300ms;
+              }
+              &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0px 1rem 2rem rgba(black, 0.2);
+                // background-color: honeydew;
+                &::before {
+                  opacity: 0;
+                  transform: translate(-50%, -50%) scale(2);
+                }
+              }
+            }
+          }
+
+          &-giveheight:hover &-small {
+            height: 8.5%;
+            pointer-events: all;
+            color: #075cca;
+          }
+
+          &-large {
+            position: absolute;
+            height: 0%;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            transition-delay: 0s;
+            transition: height 300ms;
+            backdrop-filter: blur(5rem);
+
+            &-closeButton {
+              cursor: pointer;
+              position: absolute;
+              right: 3%;
+              top: 3%;
+              transition: all 300ms;
+              // &:hover {
+              //   color: red;
+              // }
+              &-icon {
+                font-size: 5rem !important;
+                vertical-align: text-bottom !important;
+                margin: 0 !important;
+              }
+            }
+
+            &-logo {
+              width: 100%;
+              margin: 12.5rem 0rem;
+              &-image {
+                width: 50%;
+              }
+            }
+            &-header {
+              font-size: 2.5rem;
+              font-weight: 700;
+              color: rgb(255, 66, 66);
+              margin-bottom: 2rem;
+              text-align: center;
+            }
+            &-text {
+              font-size: 1.5rem;
+              font-weight: 400;
+              color: gainsboro;
+              width: 70%;
+              margin: auto;
+              margin-bottom: 4rem;
+              text-align: center;
+            }
+
+            &-button {
+              width: 100%;
+
+              & > button {
+                cursor: pointer;
+                border: none;
+                color: white;
+                padding: 1.5rem 4rem;
+                border-radius: 10rem;
+                transition: all 300ms;
+                backface-visibility: hidden;
+                position: relative;
+                z-index: 2;
+                &::before {
+                  content: "";
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                  @include absCenter;
+                  border-radius: 10rem;
+                  transform: translate(-50%, -50%) scale(1);
+                  background-image: inherit;
+                  z-index: -2;
+                  transition: all 300ms;
+                }
+                &:hover {
+                  transform: translateY(-3px);
+                  box-shadow: 0px 1rem 2rem rgba(black, 0.2);
+                  // background-color: honeydew;
+                  &::before {
+                    opacity: 0;
+                    transform: translate(-50%, -50%) scale(2);
+                  }
+                }
+              }
+            }
+            &-giveheight {
+              transition-delay: 300ms;
+              transition-duration: 300ms;
+              height: 100%;
+            }
+          }
+        }
+        &-preview {
+          width: 100%;
+          height: 100%;
+          background-color: white;
+        }
+        &-previewClose {
+          cursor: pointer;
+          position: absolute;
+          top: 4rem;
+          left: 50%;
+          color: black;
+          transform: translateY(-50%);
+          &::after {
+            content: "Close Preview";
+            position: absolute;
+            overflow: hidden;
+            width: 0%;
+            height: 50%;
+            white-space: nowrap;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 100%;
+            font-size: 1.5rem;
+            transition: all 300ms;
+          }
+          &:hover {
+            &::after {
+              width: 200%;
+            }
+          }
+          &-icon {
+            font-size: 5rem !important;
+          }
+        }
+      }
+      &__navigator {
+        position: absolute;
+        width: 90%;
+        height: 4rem;
+        bottom: 13%;
+        left: 50%;
+        transform: translateX(-50%);
+        //background-color: teal;
+        &-up {
+          position: absolute;
+          display: inline-block;
+          left: 0;
+          top: 0;
+          width: 6%;
+          height: 150%;
+          color: white;
+          cursor: pointer;
+          &-icon {
+            position: absolute;
+            display: inline-block;
+            bottom: 0%;
+            //height: 100%;
+            // top: 50%;
+            // transform: translateY(-50%);
+            //background-color: red;
+            transform: translate(50%, -25%) rotate(90deg);
+            transition: all 300ms;
+            cursor: inherit;
+            &-actual {
+              font-size: 4rem !important;
+              vertical-align: middle;
+            }
+          }
+          &:hover &-icon {
+            animation: goUp 1s linear infinite;
+          }
+          &-text {
+            position: absolute;
+            cursor: inherit;
+            bottom: 0%;
+            left: 0%;
+            font-size: 2rem;
+          }
+          &-icon {
+            font-size: 4rem !important;
+          }
+        }
+        &-down {
+          position: absolute;
+          display: inline-block;
+          right: 0;
+          top: 0;
+          width: 6%;
+          height: 150%;
+          color: white;
+          cursor: pointer;
+          &-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateX(50%) rotate(90deg);
+            transition: all 300ms;
+            cursor: inherit;
+            &-actual {
+              font-size: 4rem !important;
+              vertical-align: text-top;
+            }
+          }
+          &:hover &-icon {
+            animation: goDown 1s linear infinite;
+          }
+          &-text {
+            cursor: inherit;
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+          }
+          &-icon {
+            font-size: 4rem !important;
+          }
+        }
+        &-disabled {
+          pointer-events: none;
+          color: gray;
+        }
+      }
+    }
+  }
+}

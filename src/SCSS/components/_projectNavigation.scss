@@ -1,0 +1,136 @@
+.project__outerContainer {
+  width: 100%;
+  position: relative;
+}
+
+.projectMain {
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: stretch;
+  &__header {
+    background-color: $color-homeheader;
+    height: 100vh;
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    margin-top: 10rem;
+    &-grid {
+      padding-bottom: 2rem;
+      width: 125rem;
+      &-title {
+        text-align: center;
+        font-size: 3rem;
+      }
+      &__layout {
+        display: flex;
+        height: auto;
+        width: 100%;
+        flex-flow: row nowrap;
+        margin-top: 2rem;
+
+        &__card {
+          height: 25rem;
+          flex-basis: 33.3333%;
+          flex: 1;
+          margin: 0rem 2rem;
+          transition: all 300ms;
+          position: relative;
+          border-radius: 2rem;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.1);
+          }
+          &-img {
+            width: 75%;
+            @include absCenter;
+          }
+          &-netflix {
+            background-color: black;
+          }
+          &-facebook {
+            background-color: #398cf7;
+          }
+          &-duse {
+            background-color: rgb(71, 255, 154);
+          }
+        }
+      }
+    }
+    margin: auto;
+    overflow: hidden;
+
+    &-heading {
+      padding-top: 2rem;
+      margin-top: $height-navbar;
+      font-size: 5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    &-divider {
+      width: 7.5%;
+      height: 0.2rem;
+      background-color: tomato;
+      margin-bottom: 10rem;
+    }
+    &-text {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 7.5rem;
+    }
+  }
+}
+
+.projectNavigation {
+  position: fixed;
+  display: block;
+  height: auto;
+  width: 1px;
+
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1%;
+
+  &__box {
+    display: block;
+    position: relative;
+    height: 5rem;
+    width: 100%;
+    cursor: pointer;
+    border: 1px solid rgb(119, 119, 119);
+    &:hover {
+      border-color: white;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1rem;
+      height: 100%;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+  }
+  &-selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: all 300ms;
+    width: 2px;
+    height: 5rem;
+    //background-color: white;
+    cursor: pointer;
+  }
+}
+
+.active {
+  transition: all 300ms;
+  border-color: white;
+  transform: scale(1.3) translateX(1rem);
+}
