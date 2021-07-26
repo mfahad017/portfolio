@@ -16,7 +16,7 @@ function NavigationBar() {
         setMarginValue(8)
     }
 
-    const [isPhone, setIsPhone] = useState(useMediaQuery({maxWidth:600}, undefined, handleMarginChange))
+    const [isPhone] = useState(useMediaQuery({maxWidth:600}, undefined, handleMarginChange))
 
     useEffect(()=>{
         if(isPhone){
@@ -25,6 +25,7 @@ function NavigationBar() {
         else{
             setMarginValue(10)
         }
+        //eslint-disable-next-line
     },[])
 
     useEffect(() =>{
@@ -56,7 +57,7 @@ function NavigationBar() {
     }, [selected, marginValue])
 
     return (
-        <div className={`navigationBar ${selected === 'home' ? "navigationBar-hide" : "navigationBar-show"}`}>
+        <div className={`navigationBar ${selected === 'home' || selected === '' ? "navigationBar-hide" : "navigationBar-show"}`}>
             <div className="navigationBar-container">
                 <div className="navigationBar-selector" style={{marginLeft:margin}} />
                 <NavBarButton module={"home"}   selected={selected} setSelected = {setSelected}     />

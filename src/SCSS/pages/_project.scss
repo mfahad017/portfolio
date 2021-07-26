@@ -151,7 +151,19 @@
 
             &-button {
               width: 100%;
-
+              position: relative;
+              & > a {
+                text-decoration: none;
+                font-size: 2rem;
+                color: white;
+                position: absolute;
+                bottom: -5rem;
+                left: 50%;
+                transform: translateX(-50%);
+                &:hover {
+                  text-decoration: underline;
+                }
+              }
               & > button {
                 cursor: pointer;
                 border: none;

@@ -33,6 +33,7 @@ function ProjectDesktop({data, id}) {
                                                         </div>
                                                         <div  className="project__item__laptop-screen__overlay-large-button">
                                                             <button style={{backgroundImage: `linear-gradient(to right bottom, ${data.headingColor}, ${data.primaryColor})`}} onClick={() => setPreview(true)}>Preview</button>
+                                                            <a href="https://netflix-clone-ff.netlify.app/" target="_blank" rel="noreferrer">Visit Site</a>
                                                         </div>
                                                 </div>
                                             </div>
@@ -42,7 +43,7 @@ function ProjectDesktop({data, id}) {
                                                         <div  onClick={() => setPreview(false)} className="project__item__laptop-screen-previewClose">
                                                             <HighlightOffIcon  className="project__item__laptop-screen-previewClose-icon" />
                                                         </div>
-                                                        <iframe title="ClonePreview" className="project__item__laptop-screen-preview" src="https://clone-e9f09.web.app/" />
+                                                        <iframe title="ClonePreview" className="project__item__laptop-screen-preview" src="https://netflix-clone-ff.netlify.app/" />
                                                 </div>
                                             }
                                     </div>
