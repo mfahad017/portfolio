@@ -58,6 +58,7 @@
       margin: 1rem 0rem;
       flex-flow: column-reverse nowrap;
       align-items: center;
+      position: relative;
       &-input {
         font-size: 1.5rem;
         font-family: inherit;
@@ -115,12 +116,28 @@
         border: none;
         outline: none;
         padding: 1.25rem 3.5rem;
-        background-color: tomato;
+        background-color: #04c2c9;
         cursor: pointer;
         margin-top: 4rem;
-        transition: transform 300ms;
+        opacity: 0.8;
+        transition: opacity 300ms;
+        @include respond(phone) {
+          opacity: 1;
+        }
+
         &:hover {
-          transform: scale(1.05);
+          opacity: 1;
+        }
+      }
+      &__formSumitted {
+        position: absolute;
+        color: greenyellow;
+        top: 0;
+        opacity: 0;
+        transform: scale(0);
+        animation: popIn 300ms linear both;
+        &-icon {
+          font-size: 3rem !important;
         }
       }
     }
@@ -201,5 +218,16 @@
         }
       }
     }
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
   }
 }

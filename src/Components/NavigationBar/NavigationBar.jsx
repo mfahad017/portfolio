@@ -1,30 +1,65 @@
 import React, {useState, useEffect} from 'react'
 import NavBarButton from './NavBarButton/NavBarButton'
 import {useLocation} from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive';
 //import ImportContactsIcon from '@material-ui/icons/ImportContacts';
 function NavigationBar() {
     
     const location = useLocation();
 
     const [selected, setSelected] = useState(location.pathname.substring(1))
-    const [margin, setMargin] = useState(`${10 * 1}rem`)
+    const [marginValue, setMarginValue] = useState(10)
+    const [margin, setMargin] = useState(`${marginValue * 1}rem`)
+
+
+    const handleMarginChange = () =>{
+        setMarginValue(8)
+    }
+
+    const [isPhone, setIsPhone] = useState(useMediaQuery({maxWidth:600}, undefined, handleMarginChange))
+
+    useEffect(()=>{
+        if(isPhone){
+            setMarginValue(8)
+        }
+        else{
+            setMarginValue(10)
+        }
+    },[])
+
+    useEffect(() =>{
+
+        setMargin(`${marginValue * 1}rem`)
+
+    },[marginValue])
+
+
     useEffect(() => {
-        if(selected === "about"){
-            setMargin(`${10 * 3}rem`)
+        setSelected(location.pathname.substring(1))
+    }, [location])
+
+
+    useEffect(() => {
+        if(selected === "home"){
+            setMargin(`${marginValue * 1}rem`)
+        }
+        else if(selected === "about"){
+            setMargin(`${marginValue * 3}rem`)
         }
         else if(selected === "projects"){
-            setMargin(`${10 * 5}rem`)
+            setMargin(`${marginValue * 5}rem`)
         }
         else if(selected === "contact"){
-            setMargin(`${10 * 7}rem`)
+            setMargin(`${marginValue * 7}rem`)
         }
-    }, [selected])
+        console.log(selected)
+    }, [selected, marginValue])
 
     return (
-        <div className="navigationBar">
+        <div className={`navigationBar ${selected === 'home' ? "navigationBar-hide" : "navigationBar-show"}`}>
             <div className="navigationBar-container">
                 <div className="navigationBar-selector" style={{marginLeft:margin}} />
-                <NavBarButton module={"Home"}   selected={selected} setSelected = {setSelected}     />
+                <NavBarButton module={"home"}   selected={selected} setSelected = {setSelected}     />
                 <NavBarButton module={"about"}    selected={selected} setSelected = {setSelected}   />
                 <NavBarButton module={"projects"} selected={selected} setSelected = {setSelected}   />
                 <NavBarButton module={"contact"}   selected={selected} setSelected = {setSelected}  />

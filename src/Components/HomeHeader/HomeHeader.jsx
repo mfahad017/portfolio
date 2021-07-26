@@ -1,11 +1,11 @@
 import React from 'react'
 import Buttonarrow from '@material-ui/icons/ArrowForward';
 import { useHistory } from "react-router-dom";
-
+import hero from './hero.png'
 function HomeHeader() {
     const history = useHistory();
     return (
-        <div className="homeHeader">
+        <div className="homeHeader" style={{backgroundImage:`url(${hero})`}}>
             <div className="dynamicHeading u-margin-bottom-small">
                 <div className="dynamicHeading-static"><p><span>Hello, </span>I'm</p></div>
                 <ul className="dynamicHeading-dynamic">

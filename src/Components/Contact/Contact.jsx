@@ -4,7 +4,10 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import emailjs from 'emailjs-com';  
+import CheckCircleOutlinedIcon from '@material-ui/icons/CheckCircleOutlined';
 function Contact() {
+
+    const [submitted, setSubmmitted] = React.useState(false)
 
     function sendEmail(e) {
         e.preventDefault();
@@ -16,7 +19,12 @@ function Contact() {
               console.log(error.text);
           });
           e.target.reset()
-          alert("Operation Successful")
+          setSubmmitted(true)
+
+          setTimeout(() => {
+            setSubmmitted(false)
+          }, 5000);
+
       }
 
 
@@ -72,6 +80,13 @@ function Contact() {
                     </div>
                     <div className="contact-form__group">
                         <button className="contact-form__group__button">Submit</button>
+                        {
+                            submitted
+                            ?
+                            <div className="contact-form__group__formSumitted"><CheckCircleOutlinedIcon className="contact-form__group__formSumitted-icon" /></div>
+                            :
+                                null
+                        }
                     </div>
                   
                 </form>

@@ -7,15 +7,16 @@ import InsertEmoticonIcon from '@material-ui/icons/InsertEmoticon';
 import DoneIcon from '@material-ui/icons/Done';
 function About() {
     const data = {
-        "HTML":90,
+        "HTML":70,
         "SCSS": 70,
         "JavaScript": 60,
         "ReactJs": 70,
-        "Redux": 30,
-        "NodeJs": 100,
+        "Redux": 50,
+        "NodeJs": 50,
         "ThreeJs": 10,
         "MongoDB": 50,
     };
+    const aboutMe = "I'm a Fresh Graduadte from HITEC University, Taxila. I have serious passion for Web Development and creating intuitive, dynamic Websites. Let's make something special."
     return (
         <div className="about">
             <div className="about__header">
@@ -83,9 +84,7 @@ function About() {
                 </div>
                     <h2>Who am I ?</h2>
                     <p>
-                        I'm a Front-End Developer for ChowNow in Los Angeles, CA.
-                        I have serious passion for UI effects, animations and creating intuitive, dynamic user experiences.
-                        Let's make something special.
+                        {aboutMe}
                     </p>
                 </div>
                 <div className="about__info__language">

@@ -13,9 +13,11 @@ function App() {
      <Switch>
 
         <Route path="/home">
+        <NavigationBar/>
           <HomeHeader />
         </Route>
         <Route path="/" exact>
+        <NavigationBar/>
           <HomeHeader />
         </Route>
 
