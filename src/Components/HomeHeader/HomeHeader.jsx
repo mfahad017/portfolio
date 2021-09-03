@@ -1,6 +1,6 @@
 import React from 'react'
 import Buttonarrow from '@material-ui/icons/ArrowForward';
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import hero from './hero.png'
 function HomeHeader() {
     const history = useHistory();
@@ -13,10 +13,10 @@ function HomeHeader() {
                     <li><span>an aspiring web developer</span></li>
                 </ul>
             </div>
-            <button onClick={() => history.push("/about")} className="homeHeader_button">
+            <Link to="/about" className="homeHeader_button">
                 <span className="homeHeader_button-text">Who am I?</span>
                 <span ><Buttonarrow className="homeHeader_button-arrow"/></span>
-            </button>
+            </Link>
         </div>
     )
 }

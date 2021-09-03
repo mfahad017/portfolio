@@ -11,62 +11,54 @@ function App() {
     <div>
       <Router>
     <div className="app">
+
+    <Helmet>
+      <title>Protfolio page</title>
+      <meta 
+        name="desssssssss"
+        content="yeeeeeeeeeeeeeeeeeeeeeeet"
+      />
+    </Helmet>
+
+
+
      <Switch>
 
         <Route path="/home">
-          <Helmet>
-            <title>Home Page</title>
-            <meta
-              name="page/home"
-              content="this is the home page of my portfolio"
-            />
-          </Helmet>
+        <Helmet>
+          <title>home page</title>
+          <meta 
+            name="desssssssss"
+            content="yeeeeeeeeeeeeeeeeeeeeeeet"
+          />
+        </Helmet>
         <NavigationBar/>
           <HomeHeader />
         </Route>
         <Route path="/" exact>
         <Helmet>
-            <title>Home Page</title>
-            <meta
-              name="page/home"
-              content="this is the home page of my portfolio"
-            />
           </Helmet>
         <NavigationBar/>
           <HomeHeader />
         </Route>
 
         <Route path="/Contact">
-        <Helmet>
-            <title>Contact </title>
-            <meta
-              name="page/contact"
-              content="A page where you can contact me"
-            />
-          </Helmet>
           <NavigationBar/>
           <Contact />
         </Route>
 
         <Route path="/about">
         <Helmet>
-            <title>about page</title>
-            <meta
-              name="page/about"
-              content="this is a page about me"
-            />
-          </Helmet>
+          <title>about page</title>
+          <meta 
+            name="desssssssss111"
+            content="page/about"
+          />
+        </Helmet>
           <NavigationBar/>
           <About />
         </Route>
         <Route path="/projects">
-        <Helmet>
-            <title>Project Page</title>
-            <meta
-              name="page/project"
-              content="this is a page about my projects"
-            />
-          </Helmet>
           <NavigationBar/>
           <ProjectNav />
         </Route>
