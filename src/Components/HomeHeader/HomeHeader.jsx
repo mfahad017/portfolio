@@ -12,6 +12,10 @@ function HomeHeader() {
                     <li><span>an aspiring web developer</span></li>
                 </ul>
             </div>
+            <h1>
+                go to fb
+                <a href="www.facebook.com">facebook</a>
+            </h1>
             <Link to="/about" className="homeHeader_button">
                 <span className="homeHeader_button-text">Who am I?</span>
                 <span ><Buttonarrow className="homeHeader_button-arrow"/></span>
