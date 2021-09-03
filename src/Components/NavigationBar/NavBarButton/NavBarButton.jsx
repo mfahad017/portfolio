@@ -1,12 +1,11 @@
 import React, {useState} from 'react'
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //import PermIdentitySharpIcon from '@material-ui/icons/PermIdentitySharp';
 
 function NavBarButton({module, selected, setSelected}) {
 
     const [m] = useState(module)
 
-    const history = useHistory();
     const handleNavClick = () =>{
         setSelected(module)
         //history.push(`/${module.toLowerCase()}`)
